@@ -4,30 +4,45 @@ metadata:
   name: deploy-react-kubernetes-service
   namespace: harness-delegate-ng
   labels:
-    app: app
+    app: deploy-react-kubernetes
 spec:
   type: NodePort
   ports:
   - port: 3000
+    targetPort: 3000
+    protocol: TCP
     name: http
     nodePort: 30080
   selector:
-    app: app
+    app: deploy-react-kubernetes
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deploy-react-kubernetes-deployment
   namespace: harness-delegate-ng
+  labels:
+    app: deploy-react-kubernetes
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: deploy-react-kubernetes
   template:
     metadata:
       labels:
-        app: app
+        app: deploy-react-kubernetes
     spec:
       containers:
       - name: deploy-react-kubernetes
         image: gauravthukral/demoreact:latest
         ports:
         - containerPort: 3000
+          protocol: TCP
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "200m"
+            memory: "256Mi"
