@@ -2,7 +2,6 @@
 
 # Deploy a React application on Kubernetes
 
-Do you have a front end application that contains large amounts of duplication, handles complex states, and manages large amounts of data?
 
 React and Redux is the perfect Javascript library if your application is similar to the one described above. React provides a component based structure for everything included in an application and allows abstraction if needed to limit duplication. With Redux, it handles all of the state and can easily manage data in an application.
 
