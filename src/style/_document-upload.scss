@@ -1,0 +1,269 @@
+// Document Upload Page Styles
+
+// Variables
+$primary-color: #006a4d;
+$text-gray: #6b7280;
+$text-dark: #374151;
+$border-color: #d1d5db;
+$bg-gray: #f5f5f5;
+$white: #ffffff;
+
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+// Document Upload Container
+.document-upload {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $bg-gray;
+  font-family: "Inter", sans-serif;
+
+  &__header {
+    background-color: $primary-color;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+
+    @media (max-width: 640px) {
+      padding: 16px;
+    }
+  }
+
+  &__logo {
+    height: 24px;
+  }
+
+  &__nav {
+    display: flex;
+    margin-left: 32px;
+    gap: 24px;
+    color: $white;
+    font-size: 14px;
+
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+
+  &__nav-item {
+    cursor: pointer;
+  }
+
+  &__menu-icon {
+    margin-left: auto;
+    display: none;
+    font-size: 24px;
+    color: $white;
+
+    @media (max-width: 640px) {
+      display: block;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 24px;
+
+    @media (max-width: 640px) {
+      padding: 16px;
+    }
+  }
+
+  &__container {
+    background-color: $white;
+    border-radius: 8px;
+    padding: 32px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (max-width: 640px) {
+      padding: 20px;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 32px;
+  }
+
+  &__footer {
+    font-size: 14px;
+    color: $text-gray;
+    text-align: center;
+    padding: 16px;
+  }
+}
+
+// Progress Stepper
+.progress-stepper {
+  margin-bottom: 48px;
+  position: relative;
+
+  &__line {
+    position: absolute;
+    height: 2px;
+    background-color: #e5e7eb;
+    width: 100%;
+    top: 14px;
+    z-index: 0;
+  }
+
+  &__steps {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &--active {
+      .progress-stepper__number {
+        background-color: $primary-color;
+        color: $white;
+      }
+
+      .progress-stepper__label {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e5e7eb;
+    color: $text-gray;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__label {
+    font-size: 14px;
+    color: $text-gray;
+
+    @media (max-width: 640px) {
+      font-size: 12px;
+    }
+  }
+}
+
+// Document Form
+.document-form {
+  &__section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-size: 14px;
+    color: $text-dark;
+    margin-bottom: 8px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    font-size: 14px;
+
+    &::placeholder {
+      color: $text-gray;
+    }
+  }
+
+  &__documents {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__upload-field {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__upload-btn {
+    padding: 8px 16px;
+    background-color: $primary-color;
+    color: $white;
+    border-radius: 4px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 48px;
+  }
+
+  &__btn {
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+
+    &--primary {
+      background-color: $primary-color;
+      color: $white;
+      border: none;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+
+    &--secondary {
+      border: 1px solid $primary-color;
+      color: $primary-color;
+      background-color: transparent;
+
+      &:hover {
+        background-color: rgba($primary-color, 0.05);
+      }
+    }
+  }
+}
