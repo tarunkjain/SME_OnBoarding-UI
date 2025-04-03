@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/IBM/deploy-react-kubernetes.svg?branch=master)](https://travis-ci.org/IBM/deploy-react-kubernetes)
+# SME Onboarding UI 
 
 # Deploy a React application on Kubernetes
 
